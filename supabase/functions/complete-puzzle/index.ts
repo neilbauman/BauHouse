@@ -267,8 +267,7 @@ function validateSolution(
     case "draft":
       return validateDraftSolution(solutionData, attempt);
     case "lamp":
-      // Placeholder — will be implemented when LAMP puzzle type is built
-      return JSON.stringify(solutionData) === JSON.stringify(attempt);
+      return validateLampSolution(solutionData, attempt);
     default:
       return false;
   }
@@ -387,6 +386,40 @@ function validateDraftSolution(
 
   for (let i = 0; i < solCells.length; i++) {
     if (solCells[i] !== attCells[i]) return false;
+  }
+
+  return true;
+}
+
+interface LightPosition {
+  row: number;
+  col: number;
+}
+
+/**
+ * Validates a LAMP (Light Up / Akari) solution.
+ * Checks that the submitted light positions match the expected solution
+ * (same set of positions, order-independent).
+ */
+function validateLampSolution(
+  solution: Record<string, unknown>,
+  attempt: Record<string, unknown>
+): boolean {
+  const solLights = (solution as { lights: LightPosition[] }).lights;
+  const attLights = (attempt as { lights: LightPosition[] }).lights;
+
+  if (!solLights || !attLights || solLights.length !== attLights.length) {
+    return false;
+  }
+
+  const normalise = (l: LightPosition) => `${l.row},${l.col}`;
+
+  const solSet = new Set(solLights.map(normalise));
+  const attSet = new Set(attLights.map(normalise));
+
+  if (solSet.size !== attSet.size) return false;
+  for (const key of solSet) {
+    if (!attSet.has(key)) return false;
   }
 
   return true;
