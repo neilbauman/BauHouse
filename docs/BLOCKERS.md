@@ -23,4 +23,4 @@
 | **Description** | Font files (DM Sans) referenced in pubspec.yaml are not yet sourced. The fonts section is currently commented out. |
 | **Information needed** | Confirm Google Fonts download, or switch to `google_fonts` package for runtime loading. |
 | **Impact** | App renders with system default font instead of DM Sans. Cosmetic only; no functional impact. |
-| **Status** | OPEN — Low priority |
+| **Status** | RESOLVED — 2026-02-15. DM Sans variable font sourced from Google Fonts GitHub repo. |
