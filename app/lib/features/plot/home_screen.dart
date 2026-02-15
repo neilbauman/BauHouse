@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import '../../core/theme/colours.dart';
 import '../../core/theme/typography.dart';
 import '../../core/theme/spacing.dart';
+import '../brief/build_brief_card.dart';
 import '../brief/puzzle_set_provider.dart';
 import 'player_provider.dart';
 import 'plot_painter.dart';
@@ -107,7 +108,7 @@ class HomeScreen extends ConsumerWidget {
 
                   const SizedBox(height: BauSpacing.md),
 
-                  // Build Brief preview
+                  // Build Brief preview card
                   briefAsync.when(
                     loading: () => const SizedBox.shrink(),
                     error: (_, _) => const SizedBox.shrink(),
@@ -128,34 +129,17 @@ class HomeScreen extends ConsumerWidget {
                         );
                       }
 
-                      return Container(
-                        padding: const EdgeInsets.all(BauSpacing.md),
-                        decoration: BoxDecoration(
-                          color: BauColours.surface,
-                          borderRadius:
-                              BorderRadius.circular(BauSpacing.borderRadius),
-                          border: Border.all(color: BauColours.gridLine),
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              brief.puzzleSet.projectName,
-                              style: BauTypography.headline3,
-                            ),
-                            const SizedBox(height: BauSpacing.xs),
-                            Text(
-                              brief.puzzleSet.clientName,
-                              style: BauTypography.bodySmall,
-                            ),
-                            const SizedBox(height: BauSpacing.sm),
-                            Text(
-                              brief.puzzleSet.briefIntro,
-                              style: BauTypography.body,
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                          ],
+                      final today = DateTime.now()
+                          .toUtc()
+                          .toIso8601String()
+                          .substring(0, 10);
+
+                      return BuildBriefCard(
+                        puzzleSet: brief.puzzleSet,
+                        isCompact: true,
+                        onTap: () => context.goNamed(
+                          'brief',
+                          pathParameters: {'date': today},
                         ),
                       );
                     },
