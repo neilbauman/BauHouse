@@ -21,7 +21,7 @@ class DraftPainter extends CustomPainter {
   final bool isSolved;
 
   /// Fraction of the total width/height reserved for clue gutters.
-  static const _clueRatio = 0.25;
+  static const clueRatio = 0.25;
 
   DraftPainter({
     required this.width,
@@ -37,8 +37,8 @@ class DraftPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     // Reserve space for clues
-    final clueWidth = size.width * _clueRatio;
-    final clueHeight = size.height * _clueRatio;
+    final clueWidth = size.width * clueRatio;
+    final clueHeight = size.height * clueRatio;
 
     final gridWidth = size.width - clueWidth;
     final gridHeight = size.height - clueHeight;

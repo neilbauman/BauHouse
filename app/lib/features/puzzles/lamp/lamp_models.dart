@@ -1,9 +1,9 @@
-/// Data models for the LAMP (Light Up / Akari) puzzle.
-///
-/// Players place light bulbs on empty cells to illuminate the entire grid.
-/// Lights shine in all four cardinal directions until blocked by a black cell
-/// or the grid edge. Numbered black cells indicate exactly how many adjacent
-/// (orthogonal) lights are required.
+// Data models for the LAMP (Light Up / Akari) puzzle.
+//
+// Players place light bulbs on empty cells to illuminate the entire grid.
+// Lights shine in all four cardinal directions until blocked by a black cell
+// or the grid edge. Numbered black cells indicate exactly how many adjacent
+// (orthogonal) lights are required.
 
 /// The type of a cell in the initial grid.
 enum LampCellType {

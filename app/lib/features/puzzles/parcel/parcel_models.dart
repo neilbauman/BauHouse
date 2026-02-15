@@ -1,8 +1,8 @@
-/// Data models for the PARCEL (Shikaku-variant) puzzle.
-///
-/// Players divide a grid into non-overlapping rectangles.
-/// Each rectangle must contain exactly one "given" number,
-/// and the rectangle's area must equal that number.
+// Data models for the PARCEL (Shikaku-variant) puzzle.
+//
+// Players divide a grid into non-overlapping rectangles.
+// Each rectangle must contain exactly one "given" number,
+// and the rectangle's area must equal that number.
 
 /// A pre-placed number on the grid that constrains region sizing.
 class ParcelGiven {

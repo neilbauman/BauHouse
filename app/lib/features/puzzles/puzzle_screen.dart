@@ -5,7 +5,6 @@ import '../../core/theme/colours.dart';
 import '../../core/theme/typography.dart';
 import '../../core/theme/spacing.dart';
 import '../../core/subscription/subscription_provider.dart';
-import '../../core/ads/ad_provider.dart';
 import '../../shared/models/puzzle.dart';
 import '../brief/puzzle_set_provider.dart';
 import 'conduit/conduit_widget.dart';

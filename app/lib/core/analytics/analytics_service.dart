@@ -30,7 +30,7 @@ class AnalyticsService {
 
   /// Identify the user (after auth).
   Future<void> identify(String userId,
-      {Map<String, dynamic>? properties}) async {
+      {Map<String, Object>? properties}) async {
     if (!_initialised) return;
 
     try {
@@ -45,7 +45,7 @@ class AnalyticsService {
 
   /// Track a named event with optional properties.
   Future<void> track(String event,
-      {Map<String, dynamic>? properties}) async {
+      {Map<String, Object>? properties}) async {
     if (!_initialised) {
       debugPrint('[Analytics] (disabled) $event: $properties');
       return;

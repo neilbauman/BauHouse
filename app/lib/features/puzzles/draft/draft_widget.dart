@@ -27,9 +27,7 @@ class _DraftPuzzleWidgetState extends ConsumerState<DraftPuzzleWidget>
   late AnimationController _solvedAnimController;
   bool _hasNotifiedSolved = false;
 
-  // Drag tracking for line fills
-  int? _dragStartRow;
-  int? _dragStartCol;
+  // Drag tracking for line fills (reserved for future line-fill enhancement)
 
   @override
   void initState() {
@@ -194,7 +192,7 @@ class _DraftPuzzleWidgetState extends ConsumerState<DraftPuzzleWidget>
   ) {
     final padding = BauSpacing.sm;
     final effectiveSize = totalSize - padding * 2;
-    final clueSize = effectiveSize * DraftPainter._clueRatio;
+    final clueSize = effectiveSize * DraftPainter.clueRatio;
     final gridSize = effectiveSize - clueSize;
     final cellSize = math.min(gridSize / gridWidth, gridSize / gridHeight);
 
@@ -230,17 +228,12 @@ class _DraftPuzzleWidgetState extends ConsumerState<DraftPuzzleWidget>
     int gridWidth,
     int gridHeight,
   ) {
-    final cell = _hitTest(details.localPosition, totalSize, gridWidth, gridHeight);
-    if (cell != null) {
-      _dragStartRow = cell.$1;
-      _dragStartCol = cell.$2;
-    }
+    // Reserved for future line-fill drag enhancement
+    _hitTest(details.localPosition, totalSize, gridWidth, gridHeight);
   }
 
   void _handleDragEnd(int gridWidth, int gridHeight) {
     // Currently drags are completed as tap sequences on the provider.
     // A future enhancement could implement line-fill drags here.
-    _dragStartRow = null;
-    _dragStartCol = null;
   }
 }

@@ -1,8 +1,8 @@
-/// Data models for the SETBACK (Kings-variant) puzzle.
-///
-/// Players place houses on a grid such that no two houses are
-/// adjacent (including diagonals). Some cells may be pre-placed
-/// ("fixed") or restricted.
+// Data models for the SETBACK (Kings-variant) puzzle.
+//
+// Players place houses on a grid such that no two houses are
+// adjacent (including diagonals). Some cells may be pre-placed
+// ("fixed") or restricted.
 
 /// The state of a single cell on the SETBACK grid.
 enum SetbackCellState {

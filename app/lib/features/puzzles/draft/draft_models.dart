@@ -1,8 +1,8 @@
-/// Data models for the DRAFT (Nonogram) puzzle.
-///
-/// Players fill cells to reveal a hidden blueprint pattern.
-/// Clues along each row and column indicate contiguous groups
-/// of filled cells.
+// Data models for the DRAFT (Nonogram) puzzle.
+//
+// Players fill cells to reveal a hidden blueprint pattern.
+// Clues along each row and column indicate contiguous groups
+// of filled cells.
 
 /// The state of a single cell in the DRAFT grid.
 enum DraftCellState {
