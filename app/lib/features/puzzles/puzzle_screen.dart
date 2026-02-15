@@ -4,6 +4,8 @@ import 'package:go_router/go_router.dart';
 import '../../core/theme/colours.dart';
 import '../../core/theme/typography.dart';
 import '../../core/theme/spacing.dart';
+import '../../core/subscription/subscription_provider.dart';
+import '../../core/ads/ad_provider.dart';
 import '../../shared/models/puzzle.dart';
 import '../brief/puzzle_set_provider.dart';
 import 'conduit/conduit_widget.dart';
@@ -11,6 +13,7 @@ import 'parcel/parcel_widget.dart';
 import 'setback/setback_widget.dart';
 import 'draft/draft_widget.dart';
 import 'lamp/lamp_widget.dart';
+import 'sponsored_card.dart';
 
 /// Provider that fetches a single puzzle by ID from the current brief.
 final puzzleByIdProvider =
@@ -41,6 +44,7 @@ class PuzzleScreen extends ConsumerStatefulWidget {
 
 class _PuzzleScreenState extends ConsumerState<PuzzleScreen> {
   bool _showingCompletion = false;
+  bool _showingSponsoredCard = false;
 
   @override
   Widget build(BuildContext context) {
@@ -73,6 +77,18 @@ class _PuzzleScreenState extends ConsumerState<PuzzleScreen> {
             if (puzzle == null) {
               return const Center(
                 child: Text('Puzzle not found', style: BauTypography.body),
+              );
+            }
+
+            if (_showingSponsoredCard) {
+              return SponsoredCardOverlay(
+                onDismiss: () {
+                  if (!mounted) return;
+                  setState(() {
+                    _showingSponsoredCard = false;
+                    _showingCompletion = true;
+                  });
+                },
               );
             }
 
@@ -157,10 +173,23 @@ class _PuzzleScreenState extends ConsumerState<PuzzleScreen> {
   void _onPuzzleSolved(Puzzle puzzle) {
     // TODO: Call complete-puzzle Edge Function here
 
-    // Brief delay, then show transition
+    // Check if a sponsored card should be shown between puzzles
+    final isPremium = ref.read(isPremiumProvider);
+    final showAd = shouldShowSponsoredCard(
+      isPremium: isPremium,
+      currentSlot: puzzle.slotNumber,
+      totalSlots: 5,
+      ref: ref,
+    );
+
+    // Brief delay, then show transition (sponsored card or completion)
     Future.delayed(const Duration(milliseconds: 800), () {
       if (!mounted) return;
-      setState(() => _showingCompletion = true);
+      if (showAd) {
+        setState(() => _showingSponsoredCard = true);
+      } else {
+        setState(() => _showingCompletion = true);
+      }
     });
   }
 
