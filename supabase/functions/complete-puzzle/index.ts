@@ -250,7 +250,7 @@ Deno.serve(async (req: Request) => {
 
 /**
  * Validates a solution attempt against the stored solution.
- * Currently supports CONDUIT (pipes) puzzle type.
+ * Supports CONDUIT and PARCEL puzzle types with proper validation.
  */
 function validateSolution(
   puzzleType: string,
@@ -261,6 +261,7 @@ function validateSolution(
     case "conduit":
       return validateConduitSolution(solutionData, attempt);
     case "parcel":
+      return validateParcelSolution(solutionData, attempt);
     case "setback":
     case "draft":
     case "lamp":
@@ -290,6 +291,44 @@ function validateConduitSolution(
     if (solCells[i].rotation !== attCells[i].rotation) {
       return false;
     }
+  }
+
+  return true;
+}
+
+interface ParcelRegion {
+  row: number;
+  col: number;
+  width: number;
+  height: number;
+}
+
+/**
+ * Validates a PARCEL (Shikaku) solution.
+ * Checks that the submitted regions match the expected solution regions
+ * (same set of rectangles, order-independent).
+ */
+function validateParcelSolution(
+  solution: Record<string, unknown>,
+  attempt: Record<string, unknown>
+): boolean {
+  const solRegions = (solution as { regions: ParcelRegion[] }).regions;
+  const attRegions = (attempt as { regions: ParcelRegion[] }).regions;
+
+  if (!solRegions || !attRegions || solRegions.length !== attRegions.length) {
+    return false;
+  }
+
+  // Normalise and sort both sets of regions for order-independent comparison
+  const normalise = (r: ParcelRegion) =>
+    `${r.row},${r.col},${r.width},${r.height}`;
+
+  const solSet = new Set(solRegions.map(normalise));
+  const attSet = new Set(attRegions.map(normalise));
+
+  if (solSet.size !== attSet.size) return false;
+  for (const key of solSet) {
+    if (!attSet.has(key)) return false;
   }
 
   return true;
