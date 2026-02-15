@@ -10,8 +10,8 @@
 | P0-02 | Supabase project & schema | DONE | 2026-02-15 | All 7 tables + RLS + streets seed. Project: ozczdivcjroggnakxbfw |
 | P0-03 | CONDUIT puzzle engine (Dart) | DONE | 2026-02-15 | 24 unit tests passing. Grid init, rotation, solve detection, connectivity. |
 | P0-04 | CONDUIT puzzle UI | DONE | 2026-02-15 | Custom painter, Riverpod state, tap rotation, connection highlights, solved anim |
-| P0-05 | Supabase auth (anonymous) | IN PROGRESS | — | |
-| P0-06 | Onboarding flow | PENDING | — | |
+| P0-05 | Supabase auth (anonymous) | DONE | 2026-02-15 | Auth provider, anonymous sign-in, player record check, router redirect |
+| P0-06 | Onboarding flow | IN PROGRESS | — | |
 | P0-07 | Puzzle set delivery | PENDING | — | |
 | P0-08 | Puzzle completion + credits Edge Function | PENDING | — | |
 | P0-09 | Basic plot view | PENDING | — | |
