@@ -15,8 +15,8 @@
 | P0-07 | Puzzle set delivery | DONE | 2026-02-15 | puzzles_client view, no solution_data, ordered by session+slot |
 | P0-08 | Puzzle completion + credits Edge Function | DONE | 2026-02-15 | Edge function deployed, validates solution, awards credits, updates streak |
 | P0-09 | Basic plot view | DONE | 2026-02-15 | Custom plot painter, stats chips, Build Brief preview, session buttons |
-| P0-10 | Seed data — 2 weeks of CONDUIT puzzles | IN PROGRESS | — | |
-| P0-11 | Phase 0 PR and TestFlight build | PENDING | — | |
+| P0-10 | Seed data — 2 weeks of CONDUIT puzzles | DONE | 2026-02-15 | 140 puzzles (14 days × 5 schematic 5×5 + 5 design 7×7), serpentine patterns, scrambled |
+| P0-11 | Phase 0 PR and TestFlight build | IN PROGRESS | — | |
 
 ## Phase 1 — MVP
 
