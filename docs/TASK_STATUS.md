@@ -1,0 +1,57 @@
+# BauHouse — Task Status
+
+> Updated after every task completion. This is the owner's primary visibility into progress.
+
+## Phase 0 — Prototype
+
+| Task ID | Title | Status | Completed | Notes |
+|---------|-------|--------|-----------|-------|
+| P0-01 | Repository & project setup | DONE | 2026-02-15 | Monorepo, Flutter init, pubspec resolved, .cursor/rules.md, docs scaffolding |
+| P0-02 | Supabase project & schema | DONE | 2026-02-15 | All 7 tables + RLS + streets seed. Project: ozczdivcjroggnakxbfw |
+| P0-03 | CONDUIT puzzle engine (Dart) | DONE | 2026-02-15 | 24 unit tests passing. Grid init, rotation, solve detection, connectivity. |
+| P0-04 | CONDUIT puzzle UI | DONE | 2026-02-15 | Custom painter, Riverpod state, tap rotation, connection highlights, solved anim |
+| P0-05 | Supabase auth (anonymous) | DONE | 2026-02-15 | Auth provider, anonymous sign-in, player record check, router redirect |
+| P0-06 | Onboarding flow | DONE | 2026-02-15 | 5-step flow: welcome, guided puzzle, house style, accent colour, complete |
+| P0-07 | Puzzle set delivery | DONE | 2026-02-15 | puzzles_client view, no solution_data, ordered by session+slot |
+| P0-08 | Puzzle completion + credits Edge Function | DONE | 2026-02-15 | Edge function deployed, validates solution, awards credits, updates streak |
+| P0-09 | Basic plot view | DONE | 2026-02-15 | Custom plot painter, stats chips, Build Brief preview, session buttons |
+| P0-10 | Seed data — 2 weeks of CONDUIT puzzles | DONE | 2026-02-15 | 140 puzzles (14 days × 5 schematic 5×5 + 5 design 7×7), serpentine patterns, scrambled |
+| P0-11 | Phase 0 PR and TestFlight build | BLOCKED | — | PR #1 created. TestFlight blocked on BLOCKER-001 (Apple Developer credentials). |
+
+## Phase 1 — MVP
+
+| Task ID | Title | Status | Completed | Notes |
+|---------|-------|--------|-----------|-------|
+| P1-01 | PARCEL puzzle engine + UI | DONE | 2026-02-15 | 30 unit tests passing. Drag-to-create regions, tap-to-remove, validation, Edge Function v2 |
+| P1-02 | SETBACK puzzle engine + UI | DONE | 2026-02-15 | 21 unit tests passing. Tap-to-toggle houses, conflict detection, fixed/restricted cells |
+| P1-03 | DRAFT puzzle engine + UI | DONE | 2026-02-15 | 19 unit tests passing. Tap cycle, row/col clue satisfaction, drag fill, nonogram solve |
+| P1-04 | LAMP puzzle engine + UI | DONE | 2026-02-15 | 26 unit tests passing. Light illumination, conflict detection, clue validation, solved state |
+| P1-05 | Build Brief narrative card | DONE | 2026-02-15 | Reusable BuildBriefCard, full BriefScreen with task list, HomeScreen integration |
+| P1-06 | Schematic / Design session structure | DONE | 2026-02-15 | PuzzleScreen routes all 5 types, auto-advance, session completion, Design unlock |
+| P1-07 | Python puzzle generator — all 5 types | DONE | 2026-02-15 | 5 generators + orchestrator, JSON/SQL output, 10 puzzles/day, Python 3.9 compatible |
+| P1-08 | Narrative generator service | DONE | 2026-02-15 | Claude API + template fallback, enrichment pipeline, CLI, Supabase write support |
+| P1-09 | RevenueCat subscription integration | DONE | 2026-02-15 | SubscriptionService, provider, PaywallScreen, settings, Edge Function webhook |
+| P1-10 | AdMob rewarded ads | DONE | 2026-02-15 | AdService, AdProvider, RewardedAdButton, sponsored card, premium bypass, test ad units |
+| P1-11 | Between-puzzle sponsored card | DONE | 2026-02-15 | SponsoredCardOverlay, 3s skip, max 2/session, Elmfield development notice framing |
+| P1-12 | Streak shield mechanic | DONE | 2026-02-15 | StreakProvider, StreakShieldDialog, 3 shield options (credits/ad/premium), StreakChip |
+| P1-13 | Archive unlock flow | DONE | 2026-02-15 | ArchiveScreen, provider, unlock-archive Edge Function, archive_unlocks table, credit/ad unlock |
+| P1-14 | PostHog analytics — all core events | DONE | 2026-02-15 | AnalyticsService singleton, 14 typed events, Events constants, Riverpod provider |
+| P1-15 | Phase 1 PR — MVP complete | DONE | 2026-02-15 | PR created with full Phase 1 implementation |
+
+## Phase 2 — Growth
+
+| Task ID | Title | Status | Completed | Notes |
+|---------|-------|--------|-----------|-------|
+| P2-01 | Weekly Civic Project — puzzle + UI | PENDING | — | |
+| P2-02 | Civic Project — anonymous completion count | PENDING | — | |
+| P2-03 | Plot progression — Month 1–3 milestones | PENDING | — | |
+| P2-04 | Architect difficulty mark | PENDING | — | |
+| P2-05 | Plot seasonal decoration | PENDING | — | |
+| P2-06 | Daily email reporting — basic | PENDING | — | |
+| P2-07 | Premium conversion soft prompts | PENDING | — | |
+| P2-08 | App Store assets — iOS | PENDING | — | |
+| P2-09 | App Store assets — Android | PENDING | — | |
+| P2-10 | ASO keyword research | PENDING | — | |
+| P2-11 | Privacy policy + Terms of Service | PENDING | — | |
+| P2-12 | App Store submission — iOS | PENDING | — | |
+| P2-13 | Google Play submission | PENDING | — | |
