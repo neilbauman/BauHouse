@@ -263,6 +263,7 @@ function validateSolution(
     case "parcel":
       return validateParcelSolution(solutionData, attempt);
     case "setback":
+      return validateSetbackSolution(solutionData, attempt);
     case "draft":
     case "lamp":
       // Placeholder — will be implemented when these puzzle types are built
@@ -325,6 +326,40 @@ function validateParcelSolution(
 
   const solSet = new Set(solRegions.map(normalise));
   const attSet = new Set(attRegions.map(normalise));
+
+  if (solSet.size !== attSet.size) return false;
+  for (const key of solSet) {
+    if (!attSet.has(key)) return false;
+  }
+
+  return true;
+}
+
+interface HousePosition {
+  row: number;
+  col: number;
+}
+
+/**
+ * Validates a SETBACK (Kings variant) solution.
+ * Checks that the submitted house positions match the expected solution
+ * (same set of positions, order-independent).
+ */
+function validateSetbackSolution(
+  solution: Record<string, unknown>,
+  attempt: Record<string, unknown>
+): boolean {
+  const solHouses = (solution as { houses: HousePosition[] }).houses;
+  const attHouses = (attempt as { houses: HousePosition[] }).houses;
+
+  if (!solHouses || !attHouses || solHouses.length !== attHouses.length) {
+    return false;
+  }
+
+  const normalise = (h: HousePosition) => `${h.row},${h.col}`;
+
+  const solSet = new Set(solHouses.map(normalise));
+  const attSet = new Set(attHouses.map(normalise));
 
   if (solSet.size !== attSet.size) return false;
   for (const key of solSet) {

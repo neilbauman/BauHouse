@@ -23,7 +23,7 @@
 | Task ID | Title | Status | Completed | Notes |
 |---------|-------|--------|-----------|-------|
 | P1-01 | PARCEL puzzle engine + UI | DONE | 2026-02-15 | 30 unit tests passing. Drag-to-create regions, tap-to-remove, validation, Edge Function v2 |
-| P1-02 | SETBACK puzzle engine + UI | PENDING | — | |
+| P1-02 | SETBACK puzzle engine + UI | DONE | 2026-02-15 | 21 unit tests passing. Tap-to-toggle houses, conflict detection, fixed/restricted cells |
 | P1-03 | DRAFT puzzle engine + UI | PENDING | — | |
 | P1-04 | LAMP puzzle engine + UI | PENDING | — | |
 | P1-05 | Build Brief narrative card | PENDING | — | |
