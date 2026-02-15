@@ -34,9 +34,9 @@
 | P1-10 | AdMob rewarded ads | DONE | 2026-02-15 | AdService, AdProvider, RewardedAdButton, sponsored card, premium bypass, test ad units |
 | P1-11 | Between-puzzle sponsored card | DONE | 2026-02-15 | SponsoredCardOverlay, 3s skip, max 2/session, Elmfield development notice framing |
 | P1-12 | Streak shield mechanic | DONE | 2026-02-15 | StreakProvider, StreakShieldDialog, 3 shield options (credits/ad/premium), StreakChip |
-| P1-13 | Archive unlock flow | PENDING | — | |
-| P1-14 | PostHog analytics — all core events | PENDING | — | |
-| P1-15 | Phase 1 PR — MVP complete | PENDING | — | |
+| P1-13 | Archive unlock flow | DONE | 2026-02-15 | ArchiveScreen, provider, unlock-archive Edge Function, archive_unlocks table, credit/ad unlock |
+| P1-14 | PostHog analytics — all core events | DONE | 2026-02-15 | AnalyticsService singleton, 14 typed events, Events constants, Riverpod provider |
+| P1-15 | Phase 1 PR — MVP complete | DONE | 2026-02-15 | PR created with full Phase 1 implementation |
 
 ## Phase 2 — Growth
 
