@@ -265,8 +265,9 @@ function validateSolution(
     case "setback":
       return validateSetbackSolution(solutionData, attempt);
     case "draft":
+      return validateDraftSolution(solutionData, attempt);
     case "lamp":
-      // Placeholder — will be implemented when these puzzle types are built
+      // Placeholder — will be implemented when LAMP puzzle type is built
       return JSON.stringify(solutionData) === JSON.stringify(attempt);
     default:
       return false;
@@ -364,6 +365,28 @@ function validateSetbackSolution(
   if (solSet.size !== attSet.size) return false;
   for (const key of solSet) {
     if (!attSet.has(key)) return false;
+  }
+
+  return true;
+}
+
+/**
+ * Validates a DRAFT (Nonogram) solution.
+ * Compares the flat cells array (0=empty, 1=filled) against the expected solution.
+ */
+function validateDraftSolution(
+  solution: Record<string, unknown>,
+  attempt: Record<string, unknown>
+): boolean {
+  const solCells = (solution as { cells: number[] }).cells;
+  const attCells = (attempt as { cells: number[] }).cells;
+
+  if (!solCells || !attCells || solCells.length !== attCells.length) {
+    return false;
+  }
+
+  for (let i = 0; i < solCells.length; i++) {
+    if (solCells[i] !== attCells[i]) return false;
   }
 
   return true;
