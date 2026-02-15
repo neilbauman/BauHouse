@@ -13,8 +13,8 @@
 | P0-05 | Supabase auth (anonymous) | DONE | 2026-02-15 | Auth provider, anonymous sign-in, player record check, router redirect |
 | P0-06 | Onboarding flow | DONE | 2026-02-15 | 5-step flow: welcome, guided puzzle, house style, accent colour, complete |
 | P0-07 | Puzzle set delivery | DONE | 2026-02-15 | puzzles_client view, no solution_data, ordered by session+slot |
-| P0-08 | Puzzle completion + credits Edge Function | IN PROGRESS | — | |
-| P0-09 | Basic plot view | PENDING | — | |
+| P0-08 | Puzzle completion + credits Edge Function | DONE | 2026-02-15 | Edge function deployed, validates solution, awards credits, updates streak |
+| P0-09 | Basic plot view | IN PROGRESS | — | |
 | P0-10 | Seed data — 2 weeks of CONDUIT puzzles | PENDING | — | |
 | P0-11 | Phase 0 PR and TestFlight build | PENDING | — | |
 
