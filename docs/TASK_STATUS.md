@@ -9,8 +9,8 @@
 | P0-01 | Repository & project setup | DONE | 2026-02-15 | Monorepo, Flutter init, pubspec resolved, .cursor/rules.md, docs scaffolding |
 | P0-02 | Supabase project & schema | DONE | 2026-02-15 | All 7 tables + RLS + streets seed. Project: ozczdivcjroggnakxbfw |
 | P0-03 | CONDUIT puzzle engine (Dart) | DONE | 2026-02-15 | 24 unit tests passing. Grid init, rotation, solve detection, connectivity. |
-| P0-04 | CONDUIT puzzle UI | IN PROGRESS | — | |
-| P0-05 | Supabase auth (anonymous) | PENDING | — | |
+| P0-04 | CONDUIT puzzle UI | DONE | 2026-02-15 | Custom painter, Riverpod state, tap rotation, connection highlights, solved anim |
+| P0-05 | Supabase auth (anonymous) | IN PROGRESS | — | |
 | P0-06 | Onboarding flow | PENDING | — | |
 | P0-07 | Puzzle set delivery | PENDING | — | |
 | P0-08 | Puzzle completion + credits Edge Function | PENDING | — | |
