@@ -30,10 +30,10 @@
 | P1-06 | Schematic / Design session structure | DONE | 2026-02-15 | PuzzleScreen routes all 5 types, auto-advance, session completion, Design unlock |
 | P1-07 | Python puzzle generator — all 5 types | DONE | 2026-02-15 | 5 generators + orchestrator, JSON/SQL output, 10 puzzles/day, Python 3.9 compatible |
 | P1-08 | Narrative generator service | DONE | 2026-02-15 | Claude API + template fallback, enrichment pipeline, CLI, Supabase write support |
-| P1-09 | RevenueCat subscription integration | PENDING | — | |
-| P1-10 | AdMob rewarded ads | PENDING | — | |
-| P1-11 | Between-puzzle sponsored card | PENDING | — | |
-| P1-12 | Streak shield mechanic | PENDING | — | |
+| P1-09 | RevenueCat subscription integration | DONE | 2026-02-15 | SubscriptionService, provider, PaywallScreen, settings, Edge Function webhook |
+| P1-10 | AdMob rewarded ads | DONE | 2026-02-15 | AdService, AdProvider, RewardedAdButton, sponsored card, premium bypass, test ad units |
+| P1-11 | Between-puzzle sponsored card | DONE | 2026-02-15 | SponsoredCardOverlay, 3s skip, max 2/session, Elmfield development notice framing |
+| P1-12 | Streak shield mechanic | DONE | 2026-02-15 | StreakProvider, StreakShieldDialog, 3 shield options (credits/ad/premium), StreakChip |
 | P1-13 | Archive unlock flow | PENDING | — | |
 | P1-14 | PostHog analytics — all core events | PENDING | — | |
 | P1-15 | Phase 1 PR — MVP complete | PENDING | — | |
