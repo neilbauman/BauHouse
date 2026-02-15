@@ -7,8 +7,8 @@
 | Task ID | Title | Status | Completed | Notes |
 |---------|-------|--------|-----------|-------|
 | P0-01 | Repository & project setup | DONE | 2026-02-15 | Monorepo, Flutter init, pubspec resolved, .cursor/rules.md, docs scaffolding |
-| P0-02 | Supabase project & schema | IN PROGRESS | — | |
-| P0-03 | CONDUIT puzzle engine (Dart) | PENDING | — | |
+| P0-02 | Supabase project & schema | DONE | 2026-02-15 | All 7 tables + RLS + streets seed. Project: ozczdivcjroggnakxbfw |
+| P0-03 | CONDUIT puzzle engine (Dart) | IN PROGRESS | — | |
 | P0-04 | CONDUIT puzzle UI | PENDING | — | |
 | P0-05 | Supabase auth (anonymous) | PENDING | — | |
 | P0-06 | Onboarding flow | PENDING | — | |
