@@ -28,8 +28,8 @@
 | P1-04 | LAMP puzzle engine + UI | DONE | 2026-02-15 | 26 unit tests passing. Light illumination, conflict detection, clue validation, solved state |
 | P1-05 | Build Brief narrative card | DONE | 2026-02-15 | Reusable BuildBriefCard, full BriefScreen with task list, HomeScreen integration |
 | P1-06 | Schematic / Design session structure | DONE | 2026-02-15 | PuzzleScreen routes all 5 types, auto-advance, session completion, Design unlock |
-| P1-07 | Python puzzle generator — all 5 types | PENDING | — | |
-| P1-08 | Narrative generator service | PENDING | — | |
+| P1-07 | Python puzzle generator — all 5 types | DONE | 2026-02-15 | 5 generators + orchestrator, JSON/SQL output, 10 puzzles/day, Python 3.9 compatible |
+| P1-08 | Narrative generator service | DONE | 2026-02-15 | Claude API + template fallback, enrichment pipeline, CLI, Supabase write support |
 | P1-09 | RevenueCat subscription integration | PENDING | — | |
 | P1-10 | AdMob rewarded ads | PENDING | — | |
 | P1-11 | Between-puzzle sponsored card | PENDING | — | |

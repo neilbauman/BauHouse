@@ -7,6 +7,7 @@ import '../../features/plot/home_screen.dart';
 import '../../features/puzzles/puzzle_screen.dart';
 import '../../features/brief/brief_screen.dart';
 import '../../features/settings/settings_screen.dart';
+import '../../features/subscription/paywall_screen.dart';
 
 /// Provides the GoRouter instance with auth-based redirects.
 final routerProvider = Provider<GoRouter>((ref) {
@@ -72,6 +73,13 @@ final routerProvider = Provider<GoRouter>((ref) {
         name: 'settings',
         path: '/settings',
         builder: (context, state) => const SettingsScreen(),
+      ),
+      GoRoute(
+        name: 'paywall',
+        path: '/paywall',
+        builder: (context, state) => PaywallScreen(
+          triggerContext: state.uri.queryParameters['context'],
+        ),
       ),
     ],
   );
